@@ -1,0 +1,59 @@
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-5px); }
+    40%, 80% { transform: translateX(5px); }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+.animate-pulse {
+    animation: pulse 1.5s infinite;
+}
+
+.animate-shake {
+    animation: shake 0.4s ease-in-out;
+}
+
+.btn-answer.correct {
+    background-color: #10b981;
+    color: white;
+}
+
+.btn-answer.incorrect {
+    background-color: #ef4444;
+    color: white;
+}
+
+.progress-bar {
+    transition: width 0.3s ease;
+}
+
+.quiz-container {
+    perspective: 1000px;
+}
+
+.card {
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.option-mark {
+    transition: all 0.3s ease;
+}
+
+.btn-answer:hover .option-mark {
+    transform: scale(1.1);
+}

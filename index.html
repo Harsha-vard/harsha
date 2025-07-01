@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Web Services & API Quiz</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-gray-100 min-h-screen font-sans">
+  <div class="container mx-auto px-4 py-8 max-w-4xl">
+    <div class="text-center mb-12 animate-fade-in">
+      <h1 class="text-4xl font-bold text-indigo-800 mb-4">Web Services & API Quiz</h1>
+      <p class="text-xl text-gray-600">Test your knowledge of web services, APIs, and related technologies</p>
+      <div class="mt-6 h-2 bg-gray-200 rounded-full overflow-hidden">
+        <div id="progressBar" class="progress-bar h-full bg-indigo-600 transition-all duration-300" style="width: 0%"></div>
+      </div>
+    </div>
+
+    <div id="startScreen" class="bg-white rounded-xl shadow-xl p-8 text-center animate-fade-in">
+      <img src="https://placehold.co/600x400" alt="Quiz illustration" class="mx-auto mb-6 rounded-lg">
+      <h2 class="text-3xl font-bold text-indigo-700 mb-4">Ready to Test Your Knowledge?</h2>
+      <p class="text-lg text-gray-600 mb-8">This quiz covers REST APIs, SOAP, GraphQL, and more.</p>
+      <button id="startBtn" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 animate-pulse">Start Quiz</button>
+    </div>
+
+    <div id="quizContainer" class="hidden quiz-container">
+      <div class="bg-white rounded-xl shadow-xl overflow-hidden">
+        <div class="p-8">
+          <div class="flex justify-between items-center mb-6">
+            <span id="questionCounter" class="text-lg font-semibold text-indigo-700">Question 1/20</span>
+            <span id="scoreCounter" class="bg-indigo-100 text-indigo-800 text-sm font-semibold px-3 py-1 rounded-full">Score: 0</span>
+          </div>
+
+          <div id="questionCard" class="card">
+            <h2 id="questionText" class="text-2xl font-bold text-gray-800 mb-6"></h2>
+            <div id="answerOptions" class="space-y-3"></div>
+          </div>
+        </div>
+
+        <div class="px-8 pb-8">
+          <button id="nextBtn" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-4 rounded-lg transition-all duration-300 transform hover:scale-[1.01] disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none" disabled>Next Question</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="resultScreen" class="hidden bg-white rounded-xl shadow-xl p-8 text-center animate-fade-in">
+      <img src="https://placehold.co/600x400" alt="Result illustration" class="mx-auto mb-6 rounded-lg">
+      <h2 class="text-3xl font-bold text-indigo-700 mb-4">Quiz Completed!</h2>
+      <div id="resultMessage" class="text-xl text-gray-600 mb-6"></div>
+      <div class="text-5xl font-bold text-indigo-600 mb-8" id="finalScore"></div>
+      <div id="performanceDetails" class="mb-8 text-left max-w-md mx-auto"></div>
+      <button id="restartBtn" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105">Restart Quiz</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
